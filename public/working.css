@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    display: grid;
+    place-items: center;
+}
+
+h1 {
+    font-size: 5rem;
+    color: white;
+    width: 80%;
+}
+
+button {
+    height: 80px;
+    width: 200px;
+    color: white;
+    font-size: 2rem;
+    background-color: black;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+
+button:hover {
+    transform: scale(1.1);
+    transition: all ease-in .2s;
+}

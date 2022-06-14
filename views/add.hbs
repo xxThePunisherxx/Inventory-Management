@@ -1,0 +1,41 @@
+
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="../public/index.css" />
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet" />
+		<link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet" />
+	</head>
+    <body>
+        {{>sidebar}}
+        <div class="home">
+        <div class="addForm">
+            <h2>Add items to inventory</h2>
+            <form action="/add" method="post">
+
+                <div class="form">
+                    <label for="icode">Item code</label>
+                    <input type="text" name="icode" id="icode" autocomplete="off"  placeholder="Item code" required>
+                    <label for="iname">Item name</label>
+                    <input type="text" name="iname" id="iname" autocomplete="off"  placeholder="Item name" required>
+                    <label for="iimg">Image</label>
+                    <input type="text" name="iimg" id="iimg" autocomplete="off"  required>
+                    <label for="icat">Item category</label>
+                    <input type="text" name="icat" id="icat" autocomplete="off"  placeholder="Item category" required>
+                    <label for="ioh">On hand</label>
+                    <input type="" name="ioh" id="ioh" autocomplete="off"  placeholder="1kg" required>
+                </div>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+        <script src="public/index.js"></script>
+    </body>
+</html>
+
