@@ -55,35 +55,6 @@ app.post("/add", async (req, res) => {
 		res.send("someting went wrong");
 		console.log("cant add item try again at later time");
 	}
-
-	// console.log(" request body", req.body);
-	// let { icode, iname, iimg, icat, ioh } = req.body;
-	// // // console.log(ItemName);
-	// // console.log(req.body.icat);
-	// // console.log("Item category" + ItemCategory);
-	// // const data = new ItemModel({ ItemCode, ItemName, ItemImage, ItemCategory, ItemOnHand });
-	// // let iCode = req.body.icode;
-	// // let iName = req.body.iname;
-	// // let iImg = req.body.iimg;
-	// // let iCat = req.body.icat;
-	// // let iOh = req.body.ioh;
-
-	// const data = new ItemModel({ itemCode: icode, itemName: iname, image: iimg, category: icat, onhand: ioh });
-	// try {
-	// 	await data.save();
-	// } catch (err) {
-	// 	console.log(err);
-	// }
-	// // console.log("data " + data);
-	// // console.log(data);
-
-	// // // console.log(icode, iname, icat, ioh);
-	// // // const itemdata = new Item({ icode: ItemCode, iname: ItemName, iimg: Image, icat: Category, ioh: Onhand });
-	// // // try {
-	// // // 	await itemdata.save();
-	// // // } catch (error) {
-	// // // 	console.log(error.message);
-	// // // }
 });
 app.post("/remove", async (req, res) => {
 	let code = req.body.icode;
@@ -95,18 +66,54 @@ app.post("/remove", async (req, res) => {
 		res.render("deletedSucces");
 	});
 });
-app.get("/dashboard", (req, res) => {
+app.get("/update", (req, res) => {
+	// res.render("update");
 	res.render("workingonit");
 });
-app.get("/update", (req, res) => {
-	res.render("workingonit");
+app.post("/remove/:ItemCode", async (req, res) => {
+	let { ItemCode } = req.params;
+	let item = await ItemModel.findOne({ itemCode: ItemCode });
+	try {
+		let result = await ItemModel.findByIdAndDelete(item.id);
+	} catch (error) {
+		console.log(error);
+	}
+	res.redirect("/");
+});
+app.get("/update/:ItemCode", async (req, res) => {
+	let { ItemCode } = req.params;
+	try {
+		let item = await ItemModel.findOne({ itemCode: ItemCode });
+		res.render("update", { item });
+	} catch (error) {
+		console.log(error);
+	}
+});
+app.post("/update/:ItemCode", async (req, res) => {
+	let { ItemCode } = req.params;
+	let item = await ItemModel.findOne({ itemCode: ItemCode });
+	try {
+		let result = ItemModel.findByIdAndUpdate(
+			{ _id: item.id },
+			{
+				itemCode: req.body.icode,
+				itemName: req.body.iname,
+				image: req.body.iimg,
+				category: req.body.icat,
+				onhand: req.body.ioh,
+			},
+			function (err, result) {
+				if (err) res.send("Error");
+				else {
+					res.redirect("/");
+				}
+			}
+		);
+	} catch (error) {
+		console.log(error);
+	}
 });
 
 app.get("*", (req, res) => {
 	res.sendStatus(404);
 });
-//TODO:
-//  1. add update page
-// 2. implement update api
-// 3. add dashboad page
-//4. add paginations

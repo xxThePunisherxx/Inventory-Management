@@ -73,20 +73,20 @@
 									<h3>{{onhand}}</h3>
 								</li>
 								<li id='item-buttons'>
-									
+									<form action="/update/{{itemCode}}" method="get">
 										<button id="updateButton" >
 											<span class="material-symbols-outlined">
 													edit
 											</span>
 										</button>
-									
-									
+									</form>
+									<form action="/remove/{{itemCode}}" method="post">
 										<button id="deleteButton" >
 											<span class="material-symbols-outlined">
 												delete
 											</span>
 										</button>
-									
+									</form>
 								</li>
 							</ul>
 							
@@ -95,9 +95,9 @@
 							
 						</div>
 					</div>
-					<div class="footer">
+					{{!-- <div class="footer">
 						<h1>pagination here</h1>
-					</div>
+					</div> --}}
 				</div>
 			</div>
 		</section>
