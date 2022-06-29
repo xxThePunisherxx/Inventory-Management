@@ -20,7 +20,7 @@
 
 To run this project, you will need to add the following environment variables to your .env file to connect this app to the mongoDB database
 
-`dburl`
+`Eg :mongodb+srv://<userName>:<password>@cluster0.2ipv9.mongodb.net/?retryWrites=true&w=majority`
 
 
 
