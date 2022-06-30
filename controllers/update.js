@@ -1,7 +1,7 @@
 const ItemModel = require("../models/items");
 const updatePage = (req, res) => {
 	// res.render("update");
-	res.render("workingonit");
+	res.render("updateCode");
 };
 const getUpdateFromMain = async (req, res) => {
 	let { ItemCode } = req.params;

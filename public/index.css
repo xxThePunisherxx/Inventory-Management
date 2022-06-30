@@ -552,6 +552,20 @@ form {
 
 }
 
+.mar a button {
+    margin-left: 354px;
+    margin-top: -75px;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    background-color: red;
+}
+
+.mar a button:hover {
+    color: red;
+    background-color: white;
+    border: 1px solid red;
+}
+
 .form {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -612,6 +626,13 @@ form {
     background-color: #FFF;
     border: 1px solid red;
     transition: all ease-in .2s
+}
+
+.removeForm a button {
+    margin-left: 354px;
+    margin-top: -75px;
+    font-size: 1.5rem;
+    font-weight: bolder;
 }
 
 .addedHome {

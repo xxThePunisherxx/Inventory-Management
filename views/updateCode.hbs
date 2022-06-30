@@ -13,24 +13,16 @@
 	</head>
 	{{>sidebar}}
         <div class="home">
-        <div class="addForm">
-            <h2>Update Items</h2>        
-            <form action="/update/{{item.itemCode}}" method="post">
+        <div class="addForm mar">
+            <h2>Enter the item code to update</h2>        
+				<form action="/redirectToUpdadte"method="post">
                 <div class="form">
                     <label for="icode">Item code</label>
-                    <input type="text" name="icode" id="icode" autocomplete="off"  value="{{item.itemCode}}"  required>
-                    <label for="iname">Item name</label>
-                    <input type="text" name="iname" id="iname" autocomplete="off"  value="{{item.itemName}}" required>
-                    <label for="iimg">Image</label>
-                    <input type="text" name="iimg" id="iimg" autocomplete="off"  value="{{item.image}}" required>
-                    <label for="icat">Item category</label>
-                    <input type="text" name="icat" id="icat" autocomplete="off"  value="{{item.category}}" required>
-                    <label for="ioh">On hand</label>
-                    <input type="" name="ioh" id="ioh" autocomplete="off" value="{{item.onhand}}" required>
+                    <input type="text" name="icode" id="icode" autocomplete="off" required>
                 </div>
                 <input type="submit" value="Submit">
-                <a href="/"> <button>Cancel</button></a>
-            </form>    
+            </form>
+			<a href="/"> <button>Cancel</button></a>
         </div>
     </div>
         <script src="../public/index.js"></script>

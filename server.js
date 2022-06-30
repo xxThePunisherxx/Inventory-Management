@@ -13,8 +13,8 @@ app.set("view engine", "hbs"); //view engine configuration
 const dbUrl = process.env.dburl;
 mongoose
 	.connect(dbUrl)
-	.then((result) => app.listen(3000))
-	.then(console.log("server running at port 3000"))
+	.then(() => app.listen(4000))
+	.then(console.log("server running at port 4000"))
 	.catch((error) => console.error("can't connect to Mongoose server at dbUrl " + error.message));
 
 //controllers
@@ -23,15 +23,15 @@ const allItems = require("./controllers/items");
 const removeRouter = require("./routes/remove");
 const addRouter = require("./routes/add");
 const updateRouter = require("./routes/update");
-
+const redirectController = require("./controllers/redirect");
 app.get("/", allItems); //main page
 app.use("/add", addRouter); //add item
 app.use("/remove", removeRouter); //remove item
 app.use("/update", updateRouter); //update items
+app.post("/redirectToUpdadte", redirectController);
 app.get("*", (req, res) => {
 	res.sendStatus(404);
 });
 
 //TODO:
-// 1. Add authentication for add , remove and update functions
-//2. add update using itemcode
+// 1. implement error handling
