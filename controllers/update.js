@@ -1,6 +1,5 @@
 const ItemModel = require("../models/items");
 const updatePage = (req, res) => {
-	// res.render("update");
 	res.render("updateCode");
 };
 const getUpdateFromMain = async (req, res) => {
@@ -36,4 +35,5 @@ const postUpdateToDB = async (req, res) => {
 		console.log(error);
 	}
 };
+
 module.exports = { updatePage, getUpdateFromMain, postUpdateToDB };

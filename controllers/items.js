@@ -7,4 +7,9 @@ const allItems = async (req, res) => {
 		console.log(error);
 	}
 };
-module.exports = allItems;
+const individualitems = async (req, res) => {
+	let { itemCode } = req.params;
+	let individualitems = await ItemModel.findOne({ itemCode: itemCode });
+	res.render("individualpage", { individualitems });
+};
+module.exports = { allItems, individualitems };

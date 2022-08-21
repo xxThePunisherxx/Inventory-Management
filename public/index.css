@@ -463,10 +463,20 @@ button:hover {
     align-items: center;
 }
 
+.listbody a {
+    text-decoration: none;
+    color: black;
+}
+
+.listbody .dark .a {
+    color: wheat;
+}
+
 .listbody ul {
     border-bottom: 1px solid gray;
 
 }
+
 
 #listimg {
     padding: 10px;
@@ -507,6 +517,7 @@ form {
     background-color: var(--sidebar-color);
     width: 90%;
     border-radius: 10px;
+    justify-items: center;
 }
 
 .addForm input {
@@ -652,4 +663,37 @@ form {
     height: 30vh;
     background-color: var(--sidebar-color);
     border-radius: 10px;
+}
+
+.individualpage {
+    padding: 5rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10rem;
+}
+
+.left img {
+    width: 500px;
+    height: 500px;
+    border-radius: 20px;
+}
+
+.right {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 50px;
+}
+
+.right button a {
+    text-decoration: none;
+    color: white;
+}
+
+.right button a:hover {
+    color: #2ebd6e;
+}
+
+.addForm a button {
+    margin: 0 auto;
 }

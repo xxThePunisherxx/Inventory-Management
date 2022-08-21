@@ -11,6 +11,8 @@
 		<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet" />
 		<link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet" />
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+		<title>Inventory Management</title>
+		<link rel="shortcut icon" href="../public/images/favicon.png" type="image/x-icon">
 	</head>
 
 	<body>
@@ -55,8 +57,9 @@
 						</div>
 						<div class="listbody">
 							{{#each items}}
-						
+						<a href="/details/{{itemCode}}">
 							<ul>
+								
 								<li>
 									<h3>{{itemCode}}</h3>
 								</li>
@@ -72,6 +75,7 @@
 								<li>
 									<h3>{{onhand}}</h3>
 								</li>
+								
 								<li id='item-buttons'>
 									<form action="/update/{{itemCode}}" method="get">
 										<button id="updateButton" >
@@ -89,6 +93,7 @@
 									</form>
 								</li>
 							</ul>
+							</a>
 							
 
 							{{/each}}

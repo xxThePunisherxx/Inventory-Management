@@ -10,6 +10,8 @@
 		<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet" />
 		<link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet" />
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+        <title>Inventory Management</title>
+        <link rel="shortcut icon" href="../public/images/favicon.png" type="image/x-icon">
 	</head>
 	{{>sidebar}}
         <div class="home">
@@ -29,9 +31,11 @@
                     <input type="" name="ioh" id="ioh" autocomplete="off" value="{{item.onhand}}" required>
                 </div>
                 <input type="submit" value="Submit">
-                <a href="/"> <button>Cancel</button></a>
-            </form>    
-        </div>
+                
+            </form>  
+            {{!-- <a href="/"> <button id="cancell">Cancel</button></a>  --}}
+            
+        </div> 
     </div>
         <script src="../public/index.js"></script>
     </body>
