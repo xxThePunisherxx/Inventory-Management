@@ -1,6 +1,8 @@
 require("dotenv").config();
 const express = require("express");
 const app = express();
+let port = process.env.PORT || 6969;
+
 const mongoose = require("mongoose");
 const hbs = require("hbs");
 const staticPath = __dirname + "/public"; //static files
@@ -13,8 +15,8 @@ app.set("view engine", "hbs"); //view engine configuration
 const dbUrl = process.env.dburl;
 mongoose
 	.connect(dbUrl)
-	.then(() => app.listen(4000))
-	.then(console.log("server running at port 4000"))
+	.then(() => app.listen(port))
+	.then(console.log("server running at port" + port))
 	.catch((error) => console.error("can't connect to Mongoose server at dbUrl " + error.message));
 
 //controllers
